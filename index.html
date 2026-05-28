@@ -40,50 +40,34 @@
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
       background-size: 200px 200px;
     }
+
+    /* NAV */
     nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
       padding: 1.5rem 3rem;
       background: linear-gradient(to bottom, rgba(8,8,8,0.95), transparent);
     }
     .nav-logo {
-      font-family: var(--font-serif);
-      font-size: 1.1rem;
-      font-weight: 400;
-      letter-spacing: 0.15em;
-      color: var(--white);
-      text-decoration: none;
-      text-transform: uppercase;
+      font-family: var(--font-serif); font-size: 1.1rem; font-weight: 400;
+      letter-spacing: 0.15em; color: var(--white); text-decoration: none; text-transform: uppercase;
     }
     .nav-links { display: flex; gap: 2.5rem; list-style: none; }
     .nav-links a {
-      color: var(--grey);
-      text-decoration: none;
-      font-size: 0.7rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      transition: color 0.3s;
+      color: var(--grey); text-decoration: none; font-size: 0.7rem;
+      letter-spacing: 0.2em; text-transform: uppercase; transition: color 0.3s;
     }
     .nav-links a:hover { color: var(--gold); }
+
+    /* HERO */
     #hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 0 3rem 6rem;
-      position: relative;
-      overflow: hidden;
+      min-height: 100vh; display: flex; flex-direction: column;
+      justify-content: flex-end; padding: 0 3rem 6rem; position: relative; overflow: hidden;
     }
     .hero-bg {
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(ellipse at 70% 40%, rgba(200,169,110,0.07) 0%, transparent 60%),
-        radial-gradient(ellipse at 20% 80%, rgba(100,60,20,0.12) 0%, transparent 50%);
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 70% 40%, rgba(200,169,110,0.07) 0%, transparent 60%),
+                  radial-gradient(ellipse at 20% 80%, rgba(100,60,20,0.12) 0%, transparent 50%);
     }
     .hero-line { width: 1px; height: 80px; background: var(--gold); opacity: 0.4; margin-bottom: 2rem; }
     .hero-eyebrow { font-size: 0.65rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; font-weight: 500; }
@@ -92,25 +76,110 @@
     .hero-sub { font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--grey); display: flex; gap: 2rem; align-items: center; }
     .hero-scroll { position: absolute; bottom: 2.5rem; right: 3rem; font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--grey); writing-mode: vertical-rl; display: flex; align-items: center; gap: 1rem; }
     .hero-scroll::after { content: ''; width: 1px; height: 50px; background: var(--gold); opacity: 0.4; }
+
+    /* SECTIONS */
     section { padding: 7rem 3rem; }
     .section-header { display: flex; align-items: center; gap: 1.5rem; margin-bottom: 4rem; }
     .section-number { font-size: 0.6rem; letter-spacing: 0.2em; color: var(--gold); font-weight: 500; }
     .section-title { font-family: var(--font-serif); font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 300; letter-spacing: -0.01em; line-height: 1; }
     .section-rule { flex: 1; height: 1px; background: var(--border); }
+
+    /* GUITAR */
     #guitar { background: var(--dark); }
     .guitar-intro { max-width: 600px; font-size: 1rem; color: var(--grey); line-height: 1.8; margin-bottom: 4rem; }
     .videos-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; }
-    .video-card { background: var(--mid); border: 1px solid var(--border); border-radius: 2px; overflow: hidden; transition: border-color 0.3s, transform 0.3s; }
+
+    /* VIDEO CARD */
+    .video-card {
+      background: var(--mid); border: 1px solid var(--border);
+      border-radius: 2px; overflow: hidden; transition: border-color 0.3s, transform 0.3s;
+    }
     .video-card:hover { border-color: rgba(200,169,110,0.3); transform: translateY(-3px); }
-    .tiktok-wrap { position: relative; width: 100%; min-height: 700px; background: #000; display: flex; align-items: center; justify-content: center; }
-    .tiktok-wrap blockquote.tiktok-embed { margin: 0 !important; }
-    .video-placeholder { aspect-ratio: 9/16; background: linear-gradient(160deg, #151515, #0d0d0d); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem; text-align: center; gap: 1rem; border-bottom: 1px solid var(--border); }
-    .video-placeholder svg { width: 40px; height: 40px; opacity: 0.2; }
+
+    /* VIDEO WRAPPER */
+    .tiktok-wrap {
+      position: relative; width: 100%;
+      aspect-ratio: 9 / 16;
+      background: #000;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    /* Native HTML5 video player */
+    .native-video {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Dark cinematic placeholder shown before click */
+    .video-poster {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 1.5rem;
+      background: linear-gradient(160deg, #141414 0%, #0a0a0a 100%);
+      transition: opacity 0.4s;
+      z-index: 2;
+    }
+    .video-poster.hidden { opacity: 0; pointer-events: none; }
+
+    /* Decorative line above title */
+    .poster-rule { width: 30px; height: 1px; background: var(--gold); opacity: 0.5; }
+
+    .poster-artist {
+      font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--gold); font-weight: 500;
+    }
+    .poster-title {
+      font-family: var(--font-serif); font-size: 1.4rem; font-weight: 300;
+      color: var(--white); text-align: center; padding: 0 2rem; line-height: 1.3;
+    }
+
+    /* Play button */
+    .play-btn {
+      width: 64px; height: 64px; border-radius: 50%;
+      border: 1.5px solid rgba(200,169,110,0.6);
+      display: flex; align-items: center; justify-content: center;
+      transition: border-color 0.3s, background 0.3s;
+      margin-top: 0.5rem;
+    }
+    .tiktok-wrap:hover .play-btn {
+      border-color: var(--gold);
+      background: rgba(200,169,110,0.1);
+    }
+    .play-btn svg { width: 22px; height: 22px; fill: var(--gold); margin-left: 4px; }
+
+    .poster-hint {
+      font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: rgba(136,136,136,0.5);
+    }
+
+    /* The actual TikTok iframe — hidden until play clicked */
+    .tiktok-frame {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      border: none; z-index: 1;
+    }
+
+    /* Coming soon card */
+    .video-poster.coming-soon { cursor: default; }
+    .coming-soon-badge {
+      font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--grey); border: 1px solid var(--border); padding: 0.4rem 1rem;
+    }
+
     .video-meta { padding: 1.25rem 1.5rem; }
     .video-title { font-family: var(--font-serif); font-size: 1.2rem; font-weight: 400; margin-bottom: 0.25rem; color: var(--white); }
-    .video-artist { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0; }
-    .tiktok-cta { display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 3rem; padding: 0.85rem 2rem; border: 1px solid var(--border); color: var(--grey); text-decoration: none; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; transition: all 0.3s; }
+    .video-artist-label { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); }
+
+    .tiktok-cta {
+      display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 3rem;
+      padding: 0.85rem 2rem; border: 1px solid var(--border); color: var(--grey);
+      text-decoration: none; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; transition: all 0.3s;
+    }
     .tiktok-cta:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* WRITING */
     #writing { background: var(--black); position: relative; }
     #writing::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(to right, transparent, var(--gold), transparent); opacity: 0.3; }
     .writing-intro { max-width: 600px; font-size: 1rem; color: var(--grey); line-height: 1.8; margin-bottom: 4rem; }
@@ -127,6 +196,8 @@
     .posts-loading { padding: 3rem; text-align: center; color: var(--grey); font-size: 0.8rem; letter-spacing: 0.1em; background: var(--mid); border: 1px solid var(--border); }
     .substack-cta { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.85rem 2rem; background: var(--gold-dim); border: 1px solid rgba(200,169,110,0.3); color: var(--gold); text-decoration: none; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; transition: all 0.3s; }
     .substack-cta:hover { background: rgba(200,169,110,0.25); border-color: var(--gold); }
+
+    /* ABOUT */
     #about { background: var(--dark); display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
     @media (max-width: 768px) { #about { grid-template-columns: 1fr; gap: 3rem; } }
     .about-left .section-header { margin-bottom: 2rem; }
@@ -138,9 +209,13 @@
     .about-links a { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 0; text-decoration: none; color: var(--grey); font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; transition: color 0.3s; }
     .about-links a:hover { color: var(--gold); }
     .about-links a span { opacity: 0.4; font-size: 0.9rem; }
+
+    /* FOOTER */
     footer { padding: 3rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
     .footer-name { font-family: var(--font-serif); font-size: 0.9rem; color: var(--grey); letter-spacing: 0.1em; }
     .footer-copy { font-size: 0.65rem; color: rgba(136,136,136,0.5); letter-spacing: 0.1em; }
+
+    /* MOBILE */
     @media (max-width: 768px) {
       nav { padding: 1.25rem 1.5rem; }
       .nav-links { display: none; }
@@ -186,70 +261,53 @@
     from Gilmour's weeping sustain to Buckley's baroque tenderness.
     New videos on TikTok <a href="https://www.tiktok.com/@reload_dat" target="_blank" style="color:var(--gold);text-decoration:none;">@reload_dat</a>.
   </p>
-  <div class="videos-grid" id="videos-grid">
+
+  <div class="videos-grid">
 
     <!-- VIDEO 1: Comfortably Numb -->
     <div class="video-card">
-      <div class="tiktok-wrap" id="wrap-1">
-        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@reload_dat/video/7615826750420913430" data-video-id="7615826750420913430" style="max-width: 605px;min-width: 325px;">
-          <section>
-            <a target="_blank" title="@reload_dat" href="https://www.tiktok.com/@reload_dat?refer=embed">@reload_dat</a>
-            Comfortably Numb Final Solo - Pink Floyd
-            <a title="pinkfloyd" target="_blank" href="https://www.tiktok.com/tag/pinkfloyd?refer=embed">#pinkfloyd</a>
-            <a title="reloaddat" target="_blank" href="https://www.tiktok.com/tag/reloaddat?refer=embed">#reloaddat</a>
-            <a title="guitar" target="_blank" href="https://www.tiktok.com/tag/guitar?refer=embed">#guitar</a>
-            <a title="solo" target="_blank" href="https://www.tiktok.com/tag/solo?refer=embed">#solo</a>
-            <a title="comfortablynumb" target="_blank" href="https://www.tiktok.com/tag/comfortablynumb?refer=embed">#comfortablynumb</a>
-            <a target="_blank" title="♬ original sound - Ben Hagues Music" href="https://www.tiktok.com/music/original-sound-7615826742652963606?refer=embed">♬ original sound - Ben Hagues Music</a>
-          </section>
-        </blockquote>
+      <div class="tiktok-wrap" style="cursor:default;">
+        <video class="native-video" controls loop playsinline preload="none" poster="">
+          <source src="comfortably-numb.mp4" type="video/mp4">
+        </video>
       </div>
       <div class="video-meta">
-        <div class="video-artist">Pink Floyd</div>
+        <div class="video-artist-label">Pink Floyd</div>
         <div class="video-title">Comfortably Numb — Final Solo</div>
       </div>
     </div>
 
     <!-- VIDEO 2: Jeff Buckley -->
     <div class="video-card">
-      <div class="tiktok-wrap" id="wrap-2">
-        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@reload_dat/video/7612400707378892054" data-video-id="7612400707378892054" style="max-width: 605px;min-width: 325px;">
-          <section>
-            <a target="_blank" title="@reload_dat" href="https://www.tiktok.com/@reload_dat?refer=embed">@reload_dat</a>
-            Lover, You Should've Come Over - Jeff Buckley Solo
-            <a title="jeffbuckley" target="_blank" href="https://www.tiktok.com/tag/jeffbuckley?refer=embed">#jeffbuckley</a>
-            <a title="loveryoushouldhavecomeover" target="_blank" href="https://www.tiktok.com/tag/loveryoushouldhavecomeover?refer=embed">#loveryoushouldhavecomeover</a>
-            <a title="guitar" target="_blank" href="https://www.tiktok.com/tag/guitar?refer=embed">#guitar</a>
-            <a target="_blank" title="♬ original sound - Ben Hagues Music" href="https://www.tiktok.com/music/original-sound-7612400714245753622?refer=embed">♬ original sound - Ben Hagues Music</a>
-          </section>
-        </blockquote>
+      <div class="tiktok-wrap" style="cursor:default;">
+        <video class="native-video" controls loop playsinline preload="none">
+          <source src="jeff-buckley.mp4" type="video/mp4">
+        </video>
       </div>
       <div class="video-meta">
-        <div class="video-artist">Jeff Buckley</div>
+        <div class="video-artist-label">Jeff Buckley</div>
         <div class="video-title">Lover, You Should've Come Over — Solo</div>
       </div>
     </div>
 
-    <!-- VIDEO 3: Slow Dancing (coming soon) -->
+    <!-- VIDEO 3: Coming Soon -->
     <div class="video-card">
-      <div class="tiktok-wrap" id="wrap-3">
-        <div class="video-placeholder">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-            <circle cx="12" cy="12" r="10"/>
-            <line x1="12" y1="8" x2="12" y2="12"/>
-            <line x1="12" y1="16" x2="12.01" y2="16"/>
-          </svg>
-          <p style="font-size:0.7rem;color:var(--grey);letter-spacing:0.1em;text-transform:uppercase;">Coming Soon</p>
-          <p style="font-size:0.85rem;color:rgba(240,236,228,0.4);font-family:var(--font-serif);">Slow Dancing in a Burning Room</p>
+      <div class="tiktok-wrap" style="cursor:default;">
+        <div class="video-poster coming-soon">
+          <div class="poster-rule"></div>
+          <div class="poster-artist">John Mayer</div>
+          <div class="poster-title">Slow Dancing in<br/>a Burning Room</div>
+          <div class="coming-soon-badge">Coming Soon</div>
         </div>
       </div>
       <div class="video-meta">
-        <div class="video-artist">John Mayer</div>
+        <div class="video-artist-label">John Mayer</div>
         <div class="video-title">Slow Dancing in a Burning Room</div>
       </div>
     </div>
 
   </div>
+
   <a class="tiktok-cta" href="https://www.tiktok.com/@reload_dat" target="_blank">View all videos on TikTok &nbsp;→</a>
 </section>
 
@@ -266,7 +324,7 @@
     Subscribe at <a href="https://substack.com/@benedicthagues" target="_blank">substack.com/@benedicthagues</a>
   </p>
   <div id="posts-container" class="posts-grid">
-    <div class="posts-loading" id="posts-loading">Loading essays…</div>
+    <div class="posts-loading">Loading essays…</div>
   </div>
   <a class="substack-cta" href="https://substack.com/@benedicthagues" target="_blank">Read all essays on Substack &nbsp;→</a>
 </section>
@@ -300,33 +358,56 @@
   <span class="footer-copy">Guitarist · Writer · <span style="color:var(--gold);">@reload_dat</span></span>
 </footer>
 
-<script async src="https://www.tiktok.com/embed.js"></script>
 <script>
+  function loadVideo(wrapId, videoId) {
+    var poster = document.getElementById('poster-' + wrapId.replace('wrap-',''));
+    var wrap   = document.getElementById(wrapId);
+    // Fade out the poster
+    poster.classList.add('hidden');
+    // Create and insert the iframe
+    var iframe = document.createElement('iframe');
+    iframe.className   = 'tiktok-frame';
+    iframe.src         = 'https://www.tiktok.com/embed/v2/' + videoId + '?autoplay=1';
+    iframe.allow       = 'autoplay; encrypted-media';
+    iframe.allowFullscreen = true;
+    wrap.appendChild(iframe);
+    // Remove click handler so it doesn't fire again
+    wrap.onclick = null;
+    wrap.style.cursor = 'default';
+  }
+
+  // Substack RSS loader
   (async function loadPosts() {
-    const container = document.getElementById('posts-container');
-    const RSS_URL  = 'https://benedicthagues.substack.com/feed';
-    const API_URL  = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(RSS_URL) + '&count=6';
+    var container = document.getElementById('posts-container');
+    var RSS_URL   = 'https://benedicthagues.substack.com/feed';
+    var API_URL   = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(RSS_URL) + '&count=6';
     try {
-      const res  = await fetch(API_URL);
-      const data = await res.json();
+      var res  = await fetch(API_URL);
+      var data = await res.json();
       if (data.status !== 'ok' || !data.items || data.items.length === 0) throw new Error('No posts');
       container.innerHTML = '';
-      data.items.forEach(item => {
-        const div = document.createElement('div');
+      data.items.forEach(function(item) {
+        var div = document.createElement('div');
         div.innerHTML = item.description || '';
-        const text    = div.textContent || div.innerText || '';
-        const excerpt = text.replace(/\s+/g, ' ').trim().slice(0, 160) + '…';
-        const date    = item.pubDate ? new Date(item.pubDate).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }) : '';
-        const card    = document.createElement('a');
+        var text    = (div.textContent || div.innerText || '').replace(/\s+/g,' ').trim();
+        var excerpt = text.slice(0,160) + '…';
+        var date    = item.pubDate ? new Date(item.pubDate).toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'}) : '';
+        var card    = document.createElement('a');
         card.className = 'post-card';
         card.href      = item.link || 'https://substack.com/@benedicthagues';
         card.target    = '_blank';
         card.rel       = 'noopener noreferrer';
-        card.innerHTML = (date ? '<div class="post-date">' + date + '</div>' : '') + '<div class="post-title">' + item.title + '</div><p class="post-excerpt">' + excerpt + '</p>';
+        card.innerHTML = (date ? '<div class="post-date">'+date+'</div>' : '') +
+                         '<div class="post-title">'+item.title+'</div>' +
+                         '<p class="post-excerpt">'+excerpt+'</p>';
         container.appendChild(card);
       });
-    } catch (err) {
-      container.innerHTML = '<a class="post-card" href="https://substack.com/@benedicthagues" target="_blank" rel="noopener noreferrer"><div class="post-date">After the Credits</div><div class="post-title" style="font-size:1.6rem;">Essays on film — what happens to a story after the lights come up.</div><p class="post-excerpt">Read the latest essays on Substack.</p></a>';
+    } catch(e) {
+      container.innerHTML =
+        '<a class="post-card" href="https://substack.com/@benedicthagues" target="_blank" rel="noopener noreferrer">' +
+        '<div class="post-date">After the Credits</div>' +
+        '<div class="post-title" style="font-size:1.6rem;">Essays on film — what happens to a story after the lights come up.</div>' +
+        '<p class="post-excerpt">Read the latest essays on Substack.</p></a>';
     }
   })();
 </script>
