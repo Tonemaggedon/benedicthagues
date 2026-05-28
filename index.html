@@ -379,7 +379,7 @@
   // Substack RSS loader
   (async function loadPosts() {
     var container = document.getElementById('posts-container');
-    var RSS_URL   = 'https://benedicthagues.substack.com/feed';
+    var RSS_URL   = 'https://afterthecredits.substack.com/feed';
     var API_URL   = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(RSS_URL) + '&count=6';
     try {
       var res  = await fetch(API_URL);
