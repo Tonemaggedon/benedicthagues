@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Benedict Hagues — Guitarist & Reviewer</title>
   <meta name="description" content="Benedict Hagues — guitarist and film reviewer. Guitar covers on TikTok @reload_dat. Film reviews at After the Credits on Substack." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎸</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
@@ -124,7 +125,6 @@
     }
     .video-poster.hidden { opacity: 0; pointer-events: none; }
 
-    /* Decorative line above title */
     .poster-rule { width: 30px; height: 1px; background: var(--gold); opacity: 0.5; }
 
     .poster-artist {
@@ -136,7 +136,6 @@
       color: var(--white); text-align: center; padding: 0 2rem; line-height: 1.3;
     }
 
-    /* Play button */
     .play-btn {
       width: 64px; height: 64px; border-radius: 50%;
       border: 1.5px solid rgba(200,169,110,0.6);
@@ -155,13 +154,11 @@
       color: rgba(136,136,136,0.5);
     }
 
-    /* The actual TikTok iframe — hidden until play clicked */
     .tiktok-frame {
       position: absolute; inset: 0; width: 100%; height: 100%;
       border: none; z-index: 1;
     }
 
-    /* Coming soon card */
     .video-poster.coming-soon { cursor: default; }
     .coming-soon-badge {
       font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase;
