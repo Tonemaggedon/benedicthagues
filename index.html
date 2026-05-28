@@ -125,6 +125,7 @@
     }
     .video-poster.hidden { opacity: 0; pointer-events: none; }
 
+    /* Decorative line above title */
     .poster-rule { width: 30px; height: 1px; background: var(--gold); opacity: 0.5; }
 
     .poster-artist {
@@ -136,6 +137,7 @@
       color: var(--white); text-align: center; padding: 0 2rem; line-height: 1.3;
     }
 
+    /* Play button */
     .play-btn {
       width: 64px; height: 64px; border-radius: 50%;
       border: 1.5px solid rgba(200,169,110,0.6);
@@ -154,11 +156,13 @@
       color: rgba(136,136,136,0.5);
     }
 
+    /* The actual TikTok iframe — hidden until play clicked */
     .tiktok-frame {
       position: absolute; inset: 0; width: 100%; height: 100%;
       border: none; z-index: 1;
     }
 
+    /* Coming soon card */
     .video-poster.coming-soon { cursor: default; }
     .coming-soon-badge {
       font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase;
@@ -359,21 +363,25 @@
   function loadVideo(wrapId, videoId) {
     var poster = document.getElementById('poster-' + wrapId.replace('wrap-',''));
     var wrap   = document.getElementById(wrapId);
+    // Fade out the poster
     poster.classList.add('hidden');
+    // Create and insert the iframe
     var iframe = document.createElement('iframe');
     iframe.className   = 'tiktok-frame';
     iframe.src         = 'https://www.tiktok.com/embed/v2/' + videoId + '?autoplay=1';
     iframe.allow       = 'autoplay; encrypted-media';
     iframe.allowFullscreen = true;
     wrap.appendChild(iframe);
+    // Remove click handler so it doesn't fire again
     wrap.onclick = null;
     wrap.style.cursor = 'default';
   }
 
+  // Substack RSS loader
   (async function loadPosts() {
     var container = document.getElementById('posts-container');
     var RSS_URL   = 'https://bhafterthecredits.substack.com/feed';
-    var API_URL   = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(RSS_URL) + '&count=6';
+    var API_URL   = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(RSS_URL);
     try {
       var res  = await fetch(API_URL);
       var data = await res.json();
