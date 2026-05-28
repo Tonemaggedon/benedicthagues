@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Benedict Hagues — Guitarist & Writer</title>
-  <meta name="description" content="Benedict Hagues — guitarist and film writer. Guitar covers on TikTok @reload_dat. Film writing at After the Credits on Substack." />
+  <title>Benedict Hagues — Guitarist & Reviewer</title>
+  <meta name="description" content="Benedict Hagues — guitarist and film reviewer. Guitar covers on TikTok @reload_dat. Film reviews at After the Credits on Substack." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
@@ -240,7 +240,7 @@
 <section id="hero">
   <div class="hero-bg"></div>
   <div class="hero-line"></div>
-  <p class="hero-eyebrow">Guitarist &nbsp;·&nbsp; Writer &nbsp;·&nbsp; @reload_dat</p>
+  <p class="hero-eyebrow">Guitarist &nbsp;·&nbsp; Reviewer &nbsp;·&nbsp; @reload_dat</p>
   <h1>Benedict<br /><em>Hagues</em></h1>
   <div class="hero-sub">
     <span>Guitar covers</span> &nbsp;/&nbsp;
@@ -336,7 +336,7 @@
       <h2 class="section-title">About</h2>
     </div>
     <p class="about-body">
-      I'm a guitarist and writer drawn to the places where <em>sound and story</em> overlap.
+      I'm a guitarist and film reviewer drawn to the places where <em>sound and story</em> overlap.
       On guitar, I'm interested in how a single note — bent just right — can carry more emotional
       weight than a sentence. In film writing, I'm chasing the same question from the other direction:
       how a director earns a moment of silence.
@@ -355,31 +355,27 @@
 
 <footer>
   <span class="footer-name">Benedict Hagues</span>
-  <span class="footer-copy">Guitarist · Writer · <span style="color:var(--gold);">@reload_dat</span></span>
+  <span class="footer-copy">Guitarist · Reviewer · <span style="color:var(--gold);">@reload_dat</span></span>
 </footer>
 
 <script>
   function loadVideo(wrapId, videoId) {
     var poster = document.getElementById('poster-' + wrapId.replace('wrap-',''));
     var wrap   = document.getElementById(wrapId);
-    // Fade out the poster
     poster.classList.add('hidden');
-    // Create and insert the iframe
     var iframe = document.createElement('iframe');
     iframe.className   = 'tiktok-frame';
     iframe.src         = 'https://www.tiktok.com/embed/v2/' + videoId + '?autoplay=1';
     iframe.allow       = 'autoplay; encrypted-media';
     iframe.allowFullscreen = true;
     wrap.appendChild(iframe);
-    // Remove click handler so it doesn't fire again
     wrap.onclick = null;
     wrap.style.cursor = 'default';
   }
 
-  // Substack RSS loader
   (async function loadPosts() {
     var container = document.getElementById('posts-container');
-    var RSS_URL   = 'https://afterthecredits.substack.com/feed';
+    var RSS_URL   = 'https://bhafterthecredits.substack.com/feed';
     var API_URL   = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(RSS_URL) + '&count=6';
     try {
       var res  = await fetch(API_URL);
